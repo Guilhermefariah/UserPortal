@@ -5,5 +5,6 @@ describe('Form', () => {
     it('renders the submit button', () => {
         render(<Form />);
         const submitButton = screen.getByRole('button', { name: /submit/i });
+        expect(submitButton).toBeInTheDocument(); 
     })
 })
