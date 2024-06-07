@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const Form: React.FC = () => {
     const [name, setName] = useState('');
     const onSubmit = (event: React.FormEvent) => {
-        
+        event.preventDefault();
     }
 
     return (
