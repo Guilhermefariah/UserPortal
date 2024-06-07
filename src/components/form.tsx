@@ -7,7 +7,7 @@ const Form: React.FC = () => {
         <form>
             <div>
                 <label>
-                    Name
+                    Nome
                 </label>
                 <input
                     type="text"
@@ -17,8 +17,11 @@ const Form: React.FC = () => {
                     className="w-full border rounded"
                 />
             </div>
-            <button>
-
+            <button
+                type="submit"
+                className="bg-stone-500 text-white p-2 rounded"
+            >
+                Enviar
             </button>
         </form>
     )
