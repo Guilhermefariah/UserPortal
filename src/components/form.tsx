@@ -11,7 +11,7 @@ const Form: React.FC = () => {
     return (
         <form onSubmit={setSubmit} className="max-w-sm mx-auto p-4">
             <div className="mb-4">
-                <label htmlFor="name" className="block text-white">
+                <label htmlFor="name" className="block text-black">
                     Nome
                 </label>
                 <input
