@@ -22,4 +22,8 @@ describe('Form', () => {
 
 beforeAll(() => {
     window.alert = jest.fn();
-})
+});
+
+afterEach(() =>{
+    jest.clearAllMocks();
+});
