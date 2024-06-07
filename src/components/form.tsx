@@ -2,14 +2,14 @@ import React, { useState } from "react";
 
 const Form: React.FC = () => {
     const [name, setName] = useState('');
-    const onSubmit = (event: React.FormEvent) => {
+    const setSubmit = (event: React.FormEvent) => {
         event.preventDefault();
 
         alert(`Formulário enviado: ${name}`);
     }
 
     return (
-        <form>
+        <form onSubmit={setSubmit}>
             <div>
                 <label>
                     Nome
