@@ -6,14 +6,16 @@ describe('Form', () => {
         render(<Form />);
         const submitButton = screen.getByRole('button', { name: /submit/i });
         expect(submitButton).toBeInTheDocument();
-    })
+    });
 
     it('submit the form with name', () => {
         render(<Form />);
         const submitInput = screen.getByLabelText(/name/i);
         const submitButton = screen.getByRole('button', { name: /submit/i  });
 
-        fireEvent.change(submitButton, { target: { value: 'Guilherme'} }) 
+        fireEvent.change(submitButton, { target: { value: 'Guilherme'} });
         fireEvent.click(submitInput);
-    })
-})
+
+        expect(window.alert).toHaveBeenCalledWith('Form submitted with name: Guilherme');
+    });
+});
