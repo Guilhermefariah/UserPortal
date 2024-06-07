@@ -9,6 +9,6 @@ describe('Form', () => {
     })
 
     it('submit the form with name', () => {
-        
+        render(<Form />);
     })
 })
