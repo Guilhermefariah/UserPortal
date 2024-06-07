@@ -19,3 +19,7 @@ describe('Form', () => {
         expect(window.alert).toHaveBeenCalledWith('Form submitted with name: Guilherme');
     });
 });
+
+beforeAll(() => {
+    window.alert = jest.fn();
+})
