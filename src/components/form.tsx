@@ -10,8 +10,8 @@ const Form: React.FC = () => {
 
     return (
         <form onSubmit={setSubmit} className="max-w-sm mx-auto p-4">
-            <div>
-                <label>
+            <div className="mb-4">
+                <label htmlFor="name" className="block text-white">
                     Nome
                 </label>
                 <input
@@ -31,3 +31,4 @@ const Form: React.FC = () => {
         </form>
     )
 }
+export default Form
