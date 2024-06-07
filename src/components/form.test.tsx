@@ -12,7 +12,8 @@ describe('Form', () => {
         render(<Form />);
         const submitInput = screen.getByLabelText(/name/i);
         const submitButton = screen.getByRole('button', { name: /submit/i  });
-            
+
+        fireEvent.change(submitButton, { target: { value: 'Guilherme'} }) 
         fireEvent.click(submitInput);
     })
 })
