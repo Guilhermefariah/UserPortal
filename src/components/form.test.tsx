@@ -11,5 +11,6 @@ describe('Form', () => {
     it('submit the form with name', () => {
         render(<Form />);
         const submitInput = screen.getByLabelText(/name/i);
+        fireEvent.click(submitInput);
     })
 })
