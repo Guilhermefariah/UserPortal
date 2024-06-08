@@ -6,9 +6,7 @@ Este é um projeto de Next.js configurado com React.js TypeScript, Tailwind CSS 
 ```sh
 userportal/
 ├── jest.config.js
-├── jest.setup.ts
 ├── package.json
-├── .babelrc
 ├── src/
 │   │  └──app/
 │   │      └── page.tsx
