@@ -1,30 +1,18 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import Form from './Form';
 
-describe('Form', () => {
-  it('renders the submit button', () => {
-    render(<Form />);
-    const submitButton = screen.getByRole('button', { name: /enviar/i });
-    expect(submitButton).toBeInTheDocument();
-  });
+test('submits the form with the correct name', () => {
+  window.alert = jest.fn();
 
-  it('submits the form with name', () => {
-    render(<Form />);
-    const nameInput = screen.getByLabelText(/nome/i);
-    const submitButton = screen.getByRole('button', { name: /enviar/i });
+  const { getByLabelText, getByText } = render(<Form />);
+  
+  const nameInput = getByLabelText(/nome/i);
+  fireEvent.change(nameInput, { target: { value: 'Test Name' } });
 
-    fireEvent.change(nameInput, { target: { value: 'Guilherme' } });
-    fireEvent.click(submitButton);
+  const submitButton = getByText(/enviar/i);
+  fireEvent.click(submitButton);
 
-    expect(window.alert).toHaveBeenCalledWith('Formulário enviado: Guilherme');
-  });
-});
-
-beforeEach(() => {
-  jest.spyOn(window, 'alert').mockImplementation(() => {});
-});
-
-afterEach(() => {
-  jest.restoreAllMocks();
+  expect(window.alert).toHaveBeenCalledWith('Formulário enviado: Test Name');
 });
