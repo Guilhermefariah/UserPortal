@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 
-const Form: React.FC = () => {
+interface FormProps {
+    onSubmit: (name: string) => void;
+}
+
+const Form: React.FC<FormProps> = ({ onSubmit }) => {
     const [name, setName] = useState('');
     const setSubmit = (event: React.FormEvent) => {
+        
         event.preventDefault();
-
-        alert(`Formulário enviado: ${name}`);
+        onSubmit(name);
     }
 
     return (
