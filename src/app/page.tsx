@@ -1,5 +1,5 @@
 "use client";
-import Form from "@/components/Form"
+import Form from "@/components/Form";
 
 const Page: React.FC = () => {
   return (

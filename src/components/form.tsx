@@ -9,26 +9,28 @@ const Form: React.FC = () => {
     }
 
     return (
-        <form onSubmit={setSubmit} className="max-w-sm mx-auto p-4">
-            <div className="mb-4">
-                <label htmlFor="name" className="block text-black">
-                    Nome
-                </label>
-                <input
-                    type="text"
-                    id="name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="w-full border rounded"
-                />
-            </div>
-            <button
-                type="submit"
-                className="bg-stone-500 text-white p-2 rounded"
-            >
-                Enviar
-            </button>
-        </form>
+        <div className="bg-gray-100 min-h-screen flex items-center justify-center">
+            <form onSubmit={setSubmit} className="bg-white p-8 rounded shadow-md">
+                <div className="mb-4">
+                    <label htmlFor="name" className="block text-black">
+                        Nome
+                    </label>
+                    <input
+                        type="text"
+                        id="name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        className="w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    />
+                </div>
+                <button
+                    type="submit"
+                    className="bg-blue-500 text-white p-2 rounded w-full"
+                >
+                    Enviar
+                </button>
+            </form>
+        </div>
     )
 }
 export default Form
